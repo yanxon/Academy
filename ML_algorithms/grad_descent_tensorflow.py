@@ -19,7 +19,7 @@ y = tf.constant(housing.target.reshape(-1, 1), dtype=tf.float32, name="y")
 theta = tf.Variable(tf.random_uniform([n + 1, 1], -1.0, 1.0), name="theta")
 y_ = tf.matmul(X, theta, name="predictions")
 error = y_ - y
-mse = tf.reduce_mean(tf.square(error), name="mse")
+cost = tf.reduce_mean(tf.square(error), name="cost")
 gradients = 2 / m * tf.matmul(tf.transpose(X), error)
 training_op = tf.assign(theta, theta - learning_rate * gradients)
 

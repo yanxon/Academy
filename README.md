@@ -1,6 +1,6 @@
 # Welcome to Yanxon University
 
-This repo contains a compilation of theories and codes in machine learning, materials science, chemistry, and physics.
+This repository contains a compilation of theories and codes in machine learning, materials science, chemistry, and physics.
 
 The topics are often provided in Jupyter Notebook or .ipynb format. First, the theory behind the method is explained. Second, a code will be shown for a simple application. Many of the codes will be written in Python programming language.
 

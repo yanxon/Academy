@@ -1,4 +1,4 @@
-# Numerical Optimization Algorithms in JuliaLang
+# Numerical Optimization Algorithms with JuliaLang
 
 Here I will attempt to understand numerical optimization algorithms with Julia programming language. The format of the notes will be presented in Jupyter Notebook.
 

@@ -1,11 +1,9 @@
 # Welcome to Yanxon University
 
-This repository contains a compilation of theories and codes in computer science, materials science, chemistry, and physics.
+This repository contains a compilation of theories and codes in computer science, chemistry, and physics.
 
-The topics are often provided in Jupyter Notebook or .ipynb format. First, the theory behind the method is explained. Second, a code will be shown for a simple application. Most of the codes will be written in Python programming language.
+The notes are often provided in Jupyter Notebook or .ipynb format, and a few will contain only codes.
 
-Some notes will contain only codes.
+Further instructions (README.md) are available in subfolders.
 
-**I encourage readers to raise issue if there are concerns.**
-
-**I hope the readers enjoy my notes.**
+**Happy Reading**

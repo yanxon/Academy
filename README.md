@@ -1,4 +1,4 @@
-# Welcome to Yanxon University
+# Welcome to Yanxon Academy
 
 This repository contains a compilation of theories and codes in computer science, chemistry, and physics.
 

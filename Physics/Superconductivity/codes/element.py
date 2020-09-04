@@ -12,113 +12,114 @@ class Element:
         self.input = input_value
 
         # list with atomic number z, short name, full name, valence, 
-                # valence electrons, covalent radius, vdW radius, metallic radius
+        # valence electrons, covalent radius, vdW radius, metallic radius,
+        # J, L, 2S+1
         self.elements_list = [
-            (1, 'H', 'Hydrogen',    1.0, 1, 0.31, 1.20, None),
-            (2, 'He', 'Helium',     0.5, 2, 0.28, 1.40, None),
-            (3, 'Li', 'Lithium',    1.0, 1, 1.28, 1.82, 1.52),
-            (4, 'Be', 'Beryllium',  2.0, 2, 0.96, 1.53, 1.12),
-            (5, 'B', 'Boron',       3.0, 3, 0.84, 1.92, None),
-            (6, 'C', 'Carbon',      4.0, 4, 0.70, 1.70, None),
-            (7, 'N', 'Nitrogen',    3.0, 5, 0.71, 1.55, None),
-            (8, 'O', 'Oxygen',      2.0, 6, 0.66, 1.52, None),
-            (9, 'F', 'Fluorine',    1.0, 7, 0.57, 1.47, None),
-            (10, 'Ne', 'Neon',      0.5, 8, 0.58, 1.54, None),
-            (11, 'Na', 'Sodium',    1.0, 1, 1.66, 2.27, 1.86),
-            (12, 'Mg', 'Magnesium', 2.0, 2, 1.41, 1.73, 1.60),
-            (13, 'Al', 'Aluminium', 3.0, 3, 1.21, 1.84, 1.43),
-            (14, 'Si', 'Silicon',   4.0, 4, 1.11, 2.10, None),
-            (15, 'P', 'Phosphorus', 3.0, 5, 1.07, 1.80, None),
-            (16, 'S', 'Sulfur',     2.0, 6, 1.05, 1.80, None),
-            (17, 'Cl', 'Chlorine',  1.0, 7, 1.02, 1.75, None),
-            (18, 'Ar', 'Argon',     0.5, 8, 1.06, 1.88, None),
-            (19, 'K', 'Potassium',  1.0, 1, 2.03, 2.75, 2.27),
-            (20, 'Ca', 'Calcium',   2.0, 2, 1.76, 2.31, 1.97),
-            (21, 'Sc', 'Scandium',  3.0, 3, 1.70, 2.11, 1.62),
-            (22, 'Ti', 'Titanium',  4.0, 4, 1.60, 2.00, 1.47),
-            (23, 'V', 'Vanadium',   4.0, 5, 1.53, 2.00, 1.34),
-            (24, 'Cr', 'Chromium',  3.0, 6, 1.39, 2.00, 1.28),
-            (25, 'Mn', 'Manganese', 4.0, 5, 1.39, 2.00, 1.27),
-            (26, 'Fe', 'Iron',      3.0, 3, 1.32, 2.00, 1.26),
-            (27, 'Co', 'Cobalt',    3.0, 3, 1.26, 2.00, 1.25),
-            (28, 'Ni', 'Nickel',    2.0, 3, 1.24, 1.63, 1.24),
-            (29, 'Cu', 'Copper',    2.0, 2, 1.32, 1.40, 1.28),
-            (30, 'Zn', 'Zinc',      2.0, 2, 1.22, 1.39, 1.34),
-            (31, 'Ga', 'Gallium',   3.0, 3, 1.22, 1.87, 1.35),
-            (32, 'Ge', 'Germanium', 4.0, 4, 1.20, 2.11, None),
-            (33, 'As', 'Arsenic',   3.0, 5, 1.19, 1.85, None),
-            (34, 'Se', 'Selenium',  2.0, 6, 1.20, 1.90, None),
-            (35, 'Br', 'Bromine',   1.0, 7, 1.20, 1.85, None),
-            (36, 'Kr', 'Krypton',   0.5, 8, 1.16, 2.02, None),
-            (37, 'Rb', 'Rubidium',  1.0, 1, 2.20, 3.03, 2.48),
-            (38, 'Sr', 'Strontium', 2.0, 2, 1.95, 2.49, 2.15),
-            (39, 'Y', 'Yttrium',    3.0, 3, 1.90, 2.00, 1.80),
-            (40, 'Zr', 'Zirconium', 4.0, 4, 1.75, 2.00, 1.60),
-            (41, 'Nb', 'Niobium',   5.0, 5, 1.64, 2.00, 1.46),
-            (42, 'Mo', 'Molybdenum',4.0, 6, 1.54, 2.00, 1.39),
-            (43, 'Tc', 'Technetium',4.0, 5, 1.47, 2.00, 1.36),
-            (44, 'Ru', 'Ruthenium', 4.0, 3, 1.46, 2.00, 1.34),
-            (45, 'Rh', 'Rhodium',   4.0, 3, 1.42, 1.63, 1.34),
-            (46, 'Pd', 'Palladium', 4.0, 3, 1.39, 1.72, 1.37),
-            (47, 'Ag', 'Silver',    1.0, 2, 1.45, 1.58, 1.44),
-            (48, 'Cd', 'Cadmium',   2.0, 2, 1.44, 1.93, 1.51),
-            (49, 'In', 'Indium',    3.0, 3, 1.42, 2.17, 1.67),
-            (50, 'Sn', 'Tin',       4.0, 4, 1.39, 2.06, None),
-            (51, 'Sb', 'Antimony',  3.0, 5, 1.39, 2.06, None),
-            (52, 'Te', 'Tellurium', 2.0, 6, 1.38, 2.06, None),
-            (53, 'I', 'Iodine',     1.0, 7, 1.39, 1.98, None),
-            (54, 'Xe', 'Xenon',     0.5, 8, 1.40, 2.16, None),
-            (55, 'Cs', 'Caesium',   1.0, 1, 2.44, 3.43, 2.65),
-            (56, 'Ba', 'Barium',    2.0, 2, 2.15, 2.68, 2.22),
-            (57, 'La', 'Lanthanum', 3.0, 3, 2.07, 2.10, 1.87),
-            (58, 'Ce', 'Cerium',    4.0, 3, 2.04, 2.10, 1.818),
-            (59,'Pr','Praseodymium',3.0, 3, 2.03, 2.10, 1.824),
-            (60, 'Nd', 'Neodymium', 3.0, 3, 2.01, 2.10, 1.814),
-            (61, 'Pm', 'Promethium',3.0, 3, 1.99, 2.10, 1.834),
-            (62, 'Sm', 'Samarium',  3.0, 3, 1.98, 2.10, 1.804),
-            (63, 'Eu', 'Europium',  3.0, 3, 1.98, 2.10, 1.804),
-            (64, 'Gd', 'Gadolinium',3.0, 3, 1.96, 2.10, 1.804),
-            (65, 'Tb', 'Terbium',   3.0, 3, 1.94, 2.10, 1.773),
-            (66, 'Dy', 'Dysprosium',3.0, 3, 1.92, 2.10, 1.781),
-            (67, 'Ho', 'Holmium',   3.0, 3, 1.92, 2.10, 1.762),
-            (68, 'Er', 'Erbium',    3.0, 3, 1.89, 2.10, 1.761),
-            (69, 'Tm', 'Thulium',   3.0, 3, 1.90, 2.10, 1.759),
-            (70, 'Yb', 'Ytterbium', 3.0, 3, 1.87, 2.10, 1.76),
-            (71, 'Lu', 'Lutetium',  3.0, 3, 1.87, 2.10, 1.738),
-            (72, 'Hf', 'Hafnium',   4.0, 3, 1.75, 2.10, 1.59),
-            (73, 'Ta', 'Tantalum',  5.0, 3, 1.70, 2.10, 1.46),
-            (74, 'W', 'Tungsten',   4.0, 3, 1.62, 2.10, 1.39),
-            (75, 'Re', 'Rhenium',   4.0, 3, 1.51, 2.10, 1.37),
-            (76, 'Os', 'Osmium',    4.0, 3, 1.44, 2.10, 1.35),
-            (77, 'Ir', 'Iridium',   4.0, 3, 1.41, 2.10, 1.355),
-            (78, 'Pt', 'Platinum',  4.0, 3, 1.36, 1.75, 1.385),
-            (79, 'Au', 'Gold',      1.0, 3, 1.36, 1.66, 1.44),
-            (80, 'Hg', 'Mercury',   2.0, 3, 1.32, 1.55, 1.51),
-            (81, 'Tl', 'Thallium',  3.0, 3, 1.45, 1.96, 1.70),
-            (82, 'Pb', 'Lead',      4.0, 4, 1.46, 2.02, None),
-            (83, 'Bi', 'Bismuth',   3.0, 5, 1.48, 2.07, None),
-            (84, 'Po', 'Polonium',  2.0, 6, 1.40, 1.97, None),
-            (85, 'At', 'Astatine',  1.0, 7, 1.50, 2.02, None),
-            (86, 'Rn', 'Radon',     0.5, 8, 1.50, 2.20, None),
-            (87, 'Fr', 'Francium',  1.0, 1, 2.60, 3.48, None),
-            (88, 'Ra', 'Radium',    2.0, 2, 2.21, 2.83, None),
-            (89, 'Ac', 'Actinium',  3.0, 3, 2.15, 2.20, None),
-            (90, 'Th', 'Thorium',   4.0, 3, 2.06, 2.20, 1.79),
-            (91,'Pa','Protactinium',4.0, 3, 2.00, 2.20, 1.63),
-            (92, 'U', 'Uranium',    4.0, 3, 1.96, 2.20, 1.56),
-            (93, 'Np', 'Neptunium', 4.0, 3, 1.90, 2.20, 1.55),
-            (94, 'Pu', 'Plutonium', 4.0, 3, 1.87, 2.20, 1.59),
-            (95, 'Am', 'Americium', 4.0, 3, 1.80, 2.20, 1.73),
-            (96, 'Cm', 'Curium',    4.0, 3, 1.69, 2.20, 1.74),
-            (97, 'Bk', 'Berkelium', 4.0, 3, None, None, 1.70),
-            (98,'Cf','Californium', 4.0, 3, None, None, 1.86),
-            (99,'Es','Einsteinium', 4.0, 3, None, None, 1.86),
-            (100, 'Fm', 'Fermium',  4.0, 3, None, None, None),
-            (101,'Md','Mendelevium',4.0, 3, None, None, None),
-            (102, 'No', 'Nobelium', 4.0, 3, None, None, None),
-            (103, 'Lr','Lawrencium',4.0, 3, None, None, None),
-            (104,'Rf','Rutherfordium',4.0,3,None, None, None),
-            (105, 'Db', 'Dubnium',  2.0, 3, None, None, None),
+            (1, 'H', 'Hydrogen',    1.0, 1, 0.31, 1.20, None, 0.5, 0.0, 2.0),  
+            (2, 'He', 'Helium',     0.5, 2, 0.28, 1.40, None, 0.0, 0.0, 1.0), 
+            (3, 'Li', 'Lithium',    1.0, 1, 1.28, 1.82, 1.52, 0.5, 0.0, 2.0), 
+            (4, 'Be', 'Beryllium',  2.0, 2, 0.96, 1.53, 1.12, 0.0, 0.0, 1.0), 
+            (5, 'B', 'Boron',       3.0, 3, 0.84, 1.92, None, 0.5, 1.0, 2.0), 
+            (6, 'C', 'Carbon',      4.0, 4, 0.70, 1.70, None, 0.0, 1.0, 3.0), 
+            (7, 'N', 'Nitrogen',    3.0, 5, 0.71, 1.55, None, 1.5, 0.0, 4.0), 
+            (8, 'O', 'Oxygen',      2.0, 6, 0.66, 1.52, None, 2.0, 1.0, 3.0), 
+            (9, 'F', 'Fluorine',    1.0, 7, 0.57, 1.47, None, 1.5, 1.0, 2.0), 
+            (10, 'Ne', 'Neon',      0.5, 8, 0.58, 1.54, None, 0.0, 0.0, 1.0), 
+            (11, 'Na', 'Sodium',    1.0, 1, 1.66, 2.27, 1.86, 0.5, 0.0, 2.0), 
+            (12, 'Mg', 'Magnesium', 2.0, 2, 1.41, 1.73, 1.60, 0.0, 0.0, 1.0), 
+            (13, 'Al', 'Aluminium', 3.0, 3, 1.21, 1.84, 1.43, 0.5, 1.0, 2.0), 
+            (14, 'Si', 'Silicon',   4.0, 4, 1.11, 2.10, None, 0.0, 1.0, 3.0), 
+            (15, 'P', 'Phosphorus', 3.0, 5, 1.07, 1.80, None, 1.5, 0.0, 4.0), 
+            (16, 'S', 'Sulfur',     2.0, 6, 1.05, 1.80, None, 2.0, 1.0, 3.0), 
+            (17, 'Cl', 'Chlorine',  1.0, 7, 1.02, 1.75, None, 1.5, 1.0, 2.0), 
+            (18, 'Ar', 'Argon',     0.5, 8, 1.06, 1.88, None, 0.0, 0.0, 1.0), 
+            (19, 'K', 'Potassium',  1.0, 1, 2.03, 2.75, 2.27, 0.5, 0.0, 2.0), 
+            (20, 'Ca', 'Calcium',   2.0, 2, 1.76, 2.31, 1.97, 0.0, 0.0, 1.0), 
+            (21, 'Sc', 'Scandium',  3.0, 3, 1.70, 2.11, 1.62, 1.5, 2.0, 2.0), 
+            (22, 'Ti', 'Titanium',  4.0, 4, 1.60, 2.00, 1.47, 2.0, 3.0, 3.0), 
+            (23, 'V', 'Vanadium',   4.0, 5, 1.53, 2.00, 1.34, 1.5, 3.0, 4.0), 
+            (24, 'Cr', 'Chromium',  3.0, 6, 1.39, 2.00, 1.28, 3.0, 0.0, 7.0), 
+            (25, 'Mn', 'Manganese', 4.0, 5, 1.39, 2.00, 1.27, 2.5, 0.0, 6.0), 
+            (26, 'Fe', 'Iron',      3.0, 3, 1.32, 2.00, 1.26, 4.0, 2.0, 5.0), 
+            (27, 'Co', 'Cobalt',    3.0, 3, 1.26, 2.00, 1.25, 4.5, 3.0, 4.0), 
+            (28, 'Ni', 'Nickel',    2.0, 3, 1.24, 1.63, 1.24, 4.0, 3.0, 3.0), 
+            (29, 'Cu', 'Copper',    2.0, 2, 1.32, 1.40, 1.28, 0.5, 0.0, 2.0), 
+            (30, 'Zn', 'Zinc',      2.0, 2, 1.22, 1.39, 1.34, 0.0, 0.0, 1.0), 
+            (31, 'Ga', 'Gallium',   3.0, 3, 1.22, 1.87, 1.35, 0.5, 1.0, 2.0), 
+            (32, 'Ge', 'Germanium', 4.0, 4, 1.20, 2.11, None, 0.0, 1.0, 3.0), 
+            (33, 'As', 'Arsenic',   3.0, 5, 1.19, 1.85, None, 1.5, 0.0, 4.0), 
+            (34, 'Se', 'Selenium',  2.0, 6, 1.20, 1.90, None, 2.0, 2.0, 3.0), 
+            (35, 'Br', 'Bromine',   1.0, 7, 1.20, 1.85, None, 1.5, 2.0, 2.0), 
+            (36, 'Kr', 'Krypton',   0.5, 8, 1.16, 2.02, None, 0.0, 0.0, 1.0), 
+            (37, 'Rb', 'Rubidium',  1.0, 1, 2.20, 3.03, 2.48, 0.5, 0.0, 2.0), 
+            (38, 'Sr', 'Strontium', 2.0, 2, 1.95, 2.49, 2.15, 0.0, 0.0, 1.0), 
+            (39, 'Y', 'Yttrium',    3.0, 3, 1.90, 2.00, 1.80, 1.5, 2.0, 2.0), 
+            (40, 'Zr', 'Zirconium', 4.0, 4, 1.75, 2.00, 1.60, 2.0, 3.0, 3.0), 
+            (41, 'Nb', 'Niobium',   5.0, 5, 1.64, 2.00, 1.46, 0.5, 2.0, 6.0), 
+            (42, 'Mo', 'Molybdenum',4.0, 6, 1.54, 2.00, 1.39, 3.0, 0.0, 7.0), 
+            (43, 'Tc', 'Technetium',4.0, 5, 1.47, 2.00, 1.36, 2.5, 0.0, 6.0), 
+            (44, 'Ru', 'Ruthenium', 4.0, 3, 1.46, 2.00, 1.34, 5.0, 3.0, 5.0), 
+            (45, 'Rh', 'Rhodium',   4.0, 3, 1.42, 1.63, 1.34, 4.5, 3.0, 4.0), 
+            (46, 'Pd', 'Palladium', 4.0, 3, 1.39, 1.72, 1.37, 0.0, 0.0, 1.0), 
+            (47, 'Ag', 'Silver',    1.0, 2, 1.45, 1.58, 1.44, 0.5, 0.0, 2.0), 
+            (48, 'Cd', 'Cadmium',   2.0, 2, 1.44, 1.93, 1.51, 0.0, 0.0, 1.0), 
+            (49, 'In', 'Indium',    3.0, 3, 1.42, 2.17, 1.67, 0.5, 1.0, 2.0), 
+            (50, 'Sn', 'Tin',       4.0, 4, 1.39, 2.06, None, 0.0, 1.0, 3.0), 
+            (51, 'Sb', 'Antimony',  3.0, 5, 1.39, 2.06, None, 1.5, 0.0, 4.0), 
+            (52, 'Te', 'Tellurium', 2.0, 6, 1.38, 2.06, None, 2.0, 1.0, 3.0), 
+            (53, 'I', 'Iodine',     1.0, 7, 1.39, 1.98, None, 1.5, 1.0, 2.0), 
+            (54, 'Xe', 'Xenon',     0.5, 8, 1.40, 2.16, None, 0.0, 0.0, 1.0), 
+            (55, 'Cs', 'Caesium',   1.0, 1, 2.44, 3.43, 2.65, 0.5, 0.0, 2.0), 
+            (56, 'Ba', 'Barium',    2.0, 2, 2.15, 2.68, 2.22, 0.0, 0.0, 1.0), 
+            (57, 'La', 'Lanthanum', 3.0, 3, 2.07, 2.10, 1.87, 1.5, 2.0, 2.0), 
+            (58, 'Ce', 'Cerium',    4.0, 3, 2.04, 2.10, 1.818, 4.0, 4.0, 1.0),  
+            (59,'Pr','Praseodymium',3.0, 3, 2.03, 2.10, 1.824, 4.5, 6.0, 4.0),  
+            (60, 'Nd', 'Neodymium', 3.0, 3, 2.01, 2.10, 1.814, 4.0, 6.0, 5.0), 
+            (61, 'Pm', 'Promethium',3.0, 3, 1.99, 2.10, 1.834, 2.5, 5.0, 6.0), 
+            (62, 'Sm', 'Samarium',  3.0, 3, 1.98, 2.10, 1.804, 0.0, 3.0, 7.0), 
+            (63, 'Eu', 'Europium',  3.0, 3, 1.98, 2.10, 1.804, 3.5, 0.0, 8.0), 
+            (64, 'Gd', 'Gadolinium',3.0, 3, 1.96, 2.10, 1.804, 2.0, 2.0, 9.0), 
+            (65, 'Tb', 'Terbium',   3.0, 3, 1.94, 2.10, 1.773, 7.5, 5.0, 6.0), 
+            (66, 'Dy', 'Dysprosium',3.0, 3, 1.92, 2.10, 1.781, 8.0, 6.0, 5.0), 
+            (67, 'Ho', 'Holmium',   3.0, 3, 1.92, 2.10, 1.762, 7.5, 6.0, 4.0), 
+            (68, 'Er', 'Erbium',    3.0, 3, 1.89, 2.10, 1.761, 6.0, 5.0, 3.0), 
+            (69, 'Tm', 'Thulium',   3.0, 3, 1.90, 2.10, 1.759, 3.5, 3.0, 2.0), 
+            (70, 'Yb', 'Ytterbium', 3.0, 3, 1.87, 2.10, 1.76, 0.0, 0.0, 1.0), 
+            (71, 'Lu', 'Lutetium',  3.0, 3, 1.87, 2.10, 1.738, 1.5, 2.0, 2.0), 
+            (72, 'Hf', 'Hafnium',   4.0, 3, 1.75, 2.10, 1.59, 2.0, 3.0, 3.0),  
+            (73, 'Ta', 'Tantalum',  5.0, 3, 1.70, 2.10, 1.46, 1.5, 3.0, 4.0), 
+            (74, 'W', 'Tungsten',   4.0, 3, 1.62, 2.10, 1.39, 0.0, 2.0, 5.0), 
+            (75, 'Re', 'Rhenium',   4.0, 3, 1.51, 2.10, 1.37, 2.5, 0.0, 6.0), 
+            (76, 'Os', 'Osmium',    4.0, 3, 1.44, 2.10, 1.35, 4.0, 2.0, 5.0), 
+            (77, 'Ir', 'Iridium',   4.0, 3, 1.41, 2.10, 1.355, 4.5, 3.0, 4.0), 
+            (78, 'Pt', 'Platinum',  4.0, 3, 1.36, 1.75, 1.385, 3.0, 2.0, 3.0), 
+            (79, 'Au', 'Gold',      1.0, 3, 1.36, 1.66, 1.44, 0.5, 0.0,  2.0), 
+            (80, 'Hg', 'Mercury',   2.0, 3, 1.32, 1.55, 1.51, 0.0, 0.0, 1.0),  
+            (81, 'Tl', 'Thallium',  3.0, 3, 1.45, 1.96, 1.70, 0.5, 1.0, 2.0), 
+            (82, 'Pb', 'Lead',      4.0, 4, 1.46, 2.02, None, 0.0, 1.0, 3.0), 
+            (83, 'Bi', 'Bismuth',   3.0, 5, 1.48, 2.07, None, 1.5, 0.0, 4.0), 
+            (84, 'Po', 'Polonium',  2.0, 6, 1.40, 1.97, None, 2.0, 1.0, 3.0), 
+            (85, 'At', 'Astatine',  1.0, 7, 1.50, 2.02, None, 1.5, 1.0, 2.0), 
+            (86, 'Rn', 'Radon',     0.5, 8, 1.50, 2.20, None, 0.0, 0.0, 1.0), 
+            (87, 'Fr', 'Francium',  1.0, 1, 2.60, 3.48, None, 0.5, 0.0, 2.0), 
+            (88, 'Ra', 'Radium',    2.0, 2, 2.21, 2.83, None, 0.0, 0.0, 1.0), 
+            (89, 'Ac', 'Actinium',  3.0, 3, 2.15, 2.20, None, 1.5, 2.0, 2.0), 
+            (90, 'Th', 'Thorium',   4.0, 3, 2.06, 2.20, 1.79, 2.0, 3.0, 3.0), 
+            (91,'Pa','Protactinium',4.0, 3, 2.00, 2.20, 1.63, 5.5, 7.0, 4.0), 
+            (92, 'U', 'Uranium',    4.0, 3, 1.96, 2.20, 1.56, 6.0, 8.0, 5.0), 
+            (93, 'Np', 'Neptunium', 4.0, 3, 1.90, 2.20, 1.55, 5.5, 8.0, 6.0), 
+            (94, 'Pu', 'Plutonium', 4.0, 3, 1.87, 2.20, 1.59, 0.0, 3.0, 7.0), 
+            (95, 'Am', 'Americium', 4.0, 3, 1.80, 2.20, 1.73, 3.5, 0.0, 8.0), 
+            (96, 'Cm', 'Curium',    4.0, 3, 1.69, 2.20, 1.74, 2.0, 2.0, 9.0), 
+            (97, 'Bk', 'Berkelium', 4.0, 3, None, None, 1.70, 7.5, 5.0, 6.0), 
+            (98,'Cf','Californium', 4.0, 3, None, None, 1.86, 8.0, 6.0, 5.0), 
+            (99,'Es','Einsteinium', 4.0, 3, None, None, 1.86, 7.5, 6.0, 4.0), 
+            (100, 'Fm', 'Fermium',  4.0, 3, None, None, None, 6.0, 5.0, 3.0), 
+            (101,'Md','Mendelevium',4.0, 3, None, None, None, 3.5, 3.0, 2.0), 
+            (102, 'No', 'Nobelium', 4.0, 3, None, None, None, 0.0, 0.0, 1.0), 
+            (103, 'Lr','Lawrencium',4.0, 3, None, None, None, 0.5, 1.0, 2.0), 
+            (104,'Rf','Rutherfordium',4.0,3,None, None, None, 2.0, 3.0, 3.0), 
+            (105, 'Db', 'Dubnium',  2.0, 3, None, None, None, 1.5, 3.0, 4.0), 
         ]
         """A list of atomic numbers, symbols, names, and other information, up
         to atomic number 105"""
@@ -278,7 +279,11 @@ class Element:
             self.vdw_radius = self.elements_list[pos][6]
             self.metallic_radius = self.elements_list[pos][7]
             self.scatter = self.sf[pos]
+            self.J = self.elements_list[pos][8]
+            self.L = self.elements_list[pos][9]
+            self.S = (self.elements_list[pos][10]-1)/2
 
+    
     def get_all(self, pos):
         """
         Return all [pos] elements in the full element list
@@ -291,9 +296,13 @@ class Element:
         """
         els = []
         for el in self.elements_list:
-            els.append(el[pos])
+            if pos == 10:
+                els.append((el[pos]-1)/2)
+            else:
+                els.append(el[pos])
         return els
 
+    
     #TODO: add docstrings for miscellaneous functions
     def all_z(self):
         return self.get_all(0)
@@ -311,6 +320,12 @@ class Element:
         return self.get_all(6)
     def all_metallic_radii(self):
         return self.get_all(7)
+    def all_J(self):
+        return self.get_all(8)
+    def all_L(self):
+        return self.get_all(9)
+    def all_S(self):
+        return self.get_all(10)
     def get_sf(self, pos):
         fp = resource_filename("pyxtal_xrd", "database/atomic_scattering_params.json")
         with open(fp, 'r') as f:
@@ -318,6 +333,7 @@ class Element:
                 els = ATOMIC_SCATTERING_PARAMS[pos]
         return els
 
+    
     def number_from_specie(specie):
         if type(specie) == int or type(specie) == float:
             if specie <= 105 and specie >= 1:
@@ -347,3 +363,24 @@ class Element:
                 print("Error: Invalid atomic symbol, name, or number.")
                 return
         return index
+
+    
+    def print_symbol(self, pos=None):
+        from fractions import Fraction
+        if pos is not None:
+            J = round(self.elements_list[pos-1][8],1)
+            L = int(self.elements_list[pos-1][9])
+            twoSplus1 = int(self.elements_list[pos-1][10])
+        else:
+            J, L, twoSplus1 = self.J, int(self.L), int(2*self.S+1)
+
+        orbitals = ["S", "P", "D", "F", "G", "H", "I",
+                    "K", "L", "M"]
+        L = orbitals[L]
+
+        J = str(Fraction(J))
+        twoSplus1 = str(twoSplus1)
+
+        #print(r'%s%s%s' % (twoSplus1, L, J))
+
+        return '%s%s%s' % (twoSplus1, L, J)

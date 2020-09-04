@@ -381,6 +381,4 @@ class Element:
         J = str(Fraction(J))
         twoSplus1 = str(twoSplus1)
 
-        #print(r'%s%s%s' % (twoSplus1, L, J))
-
         return '%s%s%s' % (twoSplus1, L, J)

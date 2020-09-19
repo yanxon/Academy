@@ -2,7 +2,10 @@ def g_factor(J, L, S):
     j = J*(J+1)
     l = L*(L+1)
     s = S*(S+1)
-    g = 3/2 + 1/2 * ((s-l)/j)
+    try:
+        g = 3/2 + 1/2 * ((s-l)/j)
+    except:
+        g = 0.
     return g
 
 def effective_Bohr_magneton(J, L, S):

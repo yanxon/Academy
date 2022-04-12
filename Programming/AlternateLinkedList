@@ -1,0 +1,56 @@
+class Node:
+    def __init__(self, data, next=None):
+        self.data, self.next = data, next
+
+def print_linked_list(node):
+
+    while node:
+        print(node.data)
+        node = node.next
+    print('\n')
+
+def create_nodes(how_many=10):
+    head = temp = Node(0)
+    for i in range(1, how_many+1):
+        temp.next = Node(i)
+        temp = temp.next
+
+    return head.next
+
+def reverse(node):
+    dummy = Node(0, node)
+
+    iter_ = node
+    while iter_ and iter_.next:
+        temp = iter_.next
+        dummy.next, iter_.next, temp.next = temp, temp.next, dummy.next
+        
+    return dummy.next
+
+def merge_alternating_linked_list(node):
+    
+    dummy = fast = slow = node
+    
+    # Split list into halves
+    while fast.next and fast.next.next:
+        fast = fast.next.next
+        slow = slow.next
+    temp = slow.next
+    slow.next = None
+    
+    # reverse the last half
+    temp0 = reverse(temp)
+    
+    # Stitch the two halves back together
+    while temp0:
+        dummy_next, temp0_next = dummy.next, temp0.next
+        
+        dummy.next, temp0.next = temp0, dummy.next
+        dummy = dummy_next
+        temp0 = temp0_next
+
+    return node
+
+ll = create_nodes(10)
+pp = merge_alternating_linked_list(ll)
+print_linked_list(pp)
